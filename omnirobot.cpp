@@ -24,3 +24,10 @@ void setMotor(int rpwm, int lpwm, int speed) {
     analogWrite(lpwm, -s);
   }
 }
+void moveRobot(int x, int y, int turn) {
+  // Turn is scaled by 0.4 for "Slow Rotation"
+  float slowTurn = turn * 0.4; 
+
+  int m1Speed = x + slowTurn;
+  int m2Speed = (-0.5 * x) - (0.866 * y) + slowTurn;
+  int m3Speed = (-0.5 * x) + (0.866 * y) + slowTurn;
