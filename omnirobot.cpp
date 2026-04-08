@@ -31,3 +31,18 @@ void moveRobot(int x, int y, int turn) {
   int m1Speed = x + slowTurn;
   int m2Speed = (-0.5 * x) - (0.866 * y) + slowTurn;
   int m3Speed = (-0.5 * x) + (0.866 * y) + slowTurn;
+setMotor(M1_RPWM, M1_LPWM, m1Speed);
+  setMotor(M2_RPWM, M2_LPWM, m2Speed);
+  setMotor(M3_RPWM, M3_LPWM, m3Speed);
+}
+
+// --- WebSocket Handler ---
+void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
+  if (type == WStype_TEXT) {
+    int x, y, t;
+    // Format expected: "x,y,t"
+    if (sscanf((char*)payload, "%d,%d,%d", &x, &y, &t) == 3) {
+      moveRobot(x, y, t);
+    }
+  }
+}
