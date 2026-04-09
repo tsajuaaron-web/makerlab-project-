@@ -48,4 +48,7 @@ void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t leng
 }
 // --- Web Interface ---
 void handleRoot() {
-  String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>";
+  String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no
+  html += "<style>body{background:#222; color:white; text-align:center; font-family:sans-serif; touch-action:none;}";
+  html += ".btn{width:70px; height:70px; margin:5px; font-size:20px; border-radius:10px; border:none; background:#444; color:white;}";
+
