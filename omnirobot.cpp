@@ -51,4 +51,6 @@ void handleRoot() {
   String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no
   html += "<style>body{background:#222; color:white; text-align:center; font-family:sans-serif; touch-action:none;}";
   html += ".btn{width:70px; height:70px; margin:5px; font-size:20px; border-radius:10px; border:none; background:#444; color:white;}";
-
+  html += ".btn:active{background:#00ff00; color:black;} .rot{background:#55acee;} .stop{background:#ff4b2b; width:100%}</style></head><body>";
+   html += "<h1>Omni WS Control</h1>";
+   html += "<table>";
