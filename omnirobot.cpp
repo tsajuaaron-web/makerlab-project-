@@ -54,3 +54,7 @@ void handleRoot() {
   html += ".btn:active{background:#00ff00; color:black;} .rot{background:#55acee;} .stop{background:#ff4b2b; width:100%}</style></head><body>";
    html += "<h1>Omni WS Control</h1>";
    html += "<table>";
+html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmouseup='send(0,0,0)' ontouchstart='send(0,200,0)' ontouchend='send(0,0,0)'>&uarr;</button></td><td></td></tr>";
+  html += "<tr><td><button class='btn' onmousedown='send(-200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(-200,0,0)' ontouchend='send(0,0,0)'>&larr;</button></td>";
+  html += "<td><button class='btn rot' onmousedown='send(0,0,-150)' onmouseup='send(0,0,0)' ontouchstart='send(0,0,-150)' ontouchend='send(0,0,0)'>&#8634;</button></td>";
+  html += "<td><button class='btn' onmousedown='send(200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(200,0,0)' ontouchend='send(0,0,0)'>&rarr;</button></td></tr>";
