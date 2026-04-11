@@ -61,3 +61,9 @@ html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmous
   html += "<tr><td><button class='btn rot' onmousedown='send(0,0,150)' onmouseup='send(0,0,0)' ontouchstart='send(0,0,150)' ontouchend='send(0,0,0)'>&#8635;</button></td>";
   html += "<td><button class='btn' onmousedown='send(0,-200,0)' onmouseup='send(0,0,0)' ontouchstart='send(0,-200,0)' ontouchend='send(0,0,0)'>&darr;</button></td><td></td></tr>";
   html += "</table><br><button class='btn stop' onclick='send(0,0,0)'>STOP</button>";
+
+  html += "<script>var ws = new WebSocket('ws://' + window.location.hostname + ':81/');";
+  html += "function send(x,y,t){ if(ws.readyState===1) ws.send(x+','+y+','+t); }</script></body></html>";
+  
+  server.send(200, "text/html", html);
+}
