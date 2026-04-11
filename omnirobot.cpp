@@ -58,3 +58,6 @@ html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmous
   html += "<tr><td><button class='btn' onmousedown='send(-200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(-200,0,0)' ontouchend='send(0,0,0)'>&larr;</button></td>";
   html += "<td><button class='btn rot' onmousedown='send(0,0,-150)' onmouseup='send(0,0,0)' ontouchstart='send(0,0,-150)' ontouchend='send(0,0,0)'>&#8634;</button></td>";
   html += "<td><button class='btn' onmousedown='send(200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(200,0,0)' ontouchend='send(0,0,0)'>&rarr;</button></td></tr>";
+  html += "<tr><td><button class='btn rot' onmousedown='send(0,0,150)' onmouseup='send(0,0,0)' ontouchstart='send(0,0,150)' ontouchend='send(0,0,0)'>&#8635;</button></td>";
+  html += "<td><button class='btn' onmousedown='send(0,-200,0)' onmouseup='send(0,0,0)' ontouchstart='send(0,-200,0)' ontouchend='send(0,0,0)'>&darr;</button></td><td></td></tr>";
+  html += "</table><br><button class='btn stop' onclick='send(0,0,0)'>STOP</button>";
