@@ -67,3 +67,12 @@ html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmous
   
   server.send(200, "text/html", html);
 }
+void setup() {
+  int pins[] = {25, 26, 33, 32, 27, 14, 12, 13, 18, 19, 5, 17};
+  for (int p : pins) pinMode(p, OUTPUT);
+
+  // Enable pins set to HIGH
+  digitalWrite(33, 1); digitalWrite(32, 1);
+  digitalWrite(12, 1); digitalWrite(13, 1);
+  digitalWrite(5, 1);  digitalWrite(17, 1);
+
