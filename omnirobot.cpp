@@ -75,4 +75,16 @@ void setup() {
   digitalWrite(33, 1); digitalWrite(32, 1);
   digitalWrite(12, 1); digitalWrite(13, 1);
   digitalWrite(5, 1);  digitalWrite(17, 1);
+ WiFi.softAP(ssid, password);
+  server.on("/", handleRoot);
+  server.begin();
+
+  webSocket.begin();
+  webSocket.onEvent(onWebSocketEvent);
+}
+
+void loop() {
+  server.handleClient();
+  webSocket.loop();
+}
 
