@@ -1,7 +1,6 @@
 #include <WebServer.h>
 #include <WebSocketsServer.h>
 
-// ---#include <WiFi.h> Wi-Fi Credentials ---
 const char* ssid = "OmniRobot_WS";
 const char* password = "password123";
 
@@ -48,13 +47,13 @@ void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t leng
 }
 // --- Web Interface ---
 void handleRoot() {
-  String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no
+  String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>";
   html += "<style>body{background:#222; color:white; text-align:center; font-family:sans-serif; touch-action:none;}";
   html += ".btn{width:70px; height:70px; margin:5px; font-size:20px; border-radius:10px; border:none; background:#444; color:white;}";
   html += ".btn:active{background:#00ff00; color:black;} .rot{background:#55acee;} .stop{background:#ff4b2b; width:100%}</style></head><body>";
    html += "<h1>Omni WS Control</h1>";
    html += "<table>";
-html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmouseup='send(0,0,0)' ontouchstart='send(0,200,0)' ontouchend='send(0,0,0)'>&uarr;</button></td><td></td></tr>";
+   html += "<tr><td></td><td><button class='btn' onmousedown='send(0,200,0)' onmouseup='send(0,0,0)' ontouchstart='send(0,200,0)' ontouchend='send(0,0,0)'>&uarr;</button></td><td></td></tr>";
   html += "<tr><td><button class='btn' onmousedown='send(-200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(-200,0,0)' ontouchend='send(0,0,0)'>&larr;</button></td>";
   html += "<td><button class='btn rot' onmousedown='send(0,0,-150)' onmouseup='send(0,0,0)' ontouchstart='send(0,0,-150)' ontouchend='send(0,0,0)'>&#8634;</button></td>";
   html += "<td><button class='btn' onmousedown='send(200,0,0)' onmouseup='send(0,0,0)' ontouchstart='send(200,0,0)' ontouchend='send(0,0,0)'>&rarr;</button></td></tr>";
