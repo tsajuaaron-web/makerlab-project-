@@ -104,5 +104,13 @@ for (int i = 0; i < 4; i++) {
           currentServo[i] -= SERVO_STEP;
           if (currentServo[i] < targetServo[i]) currentServo[i] = targetServo[i];
         }
+
+        // Convert the current floating point angle to pulse and write to PCA9685
+        int pulse = map((long)currentServo[i], 0, 180, 150, 600);
+        pwm.setPWM(i, 0, pulse);
+      }
+    }
+  }
+}
     
 
