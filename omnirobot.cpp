@@ -86,4 +86,12 @@ void loop() {
   server.handleClient();
   webSocket.loop();
 }
+void loop() {
+  server.handleClient();
+  webSocket.loop();
+
+  // --- Smooth Servo Update Logic ---
+  if (millis() - lastServoTime > SERVO_INTERVAL) {
+    lastServoTime = millis();
+    
 
