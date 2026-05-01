@@ -93,5 +93,16 @@ void loop() {
   // --- Smooth Servo Update Logic ---
   if (millis() - lastServoTime > SERVO_INTERVAL) {
     lastServoTime = millis();
+for (int i = 0; i < 4; i++) {
+      if (abs(targetServo[i] - currentServo[i]) > 0.1) {
+        
+        // Move current closer to target
+        if (targetServo[i] > currentServo[i]) {
+          currentServo[i] += SERVO_STEP;
+          if (currentServo[i] > targetServo[i]) currentServo[i] = targetServo[i]; // Prevent overshoot
+        } else {
+          currentServo[i] -= SERVO_STEP;
+          if (currentServo[i] < targetServo[i]) currentServo[i] = targetServo[i];
+        }
     
 
